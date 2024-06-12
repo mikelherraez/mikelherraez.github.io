@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículum Interactivo</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <style>body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        color: #333;
+    }
+    
+    header {
+        background-color: #4CAF50;
+        color: white;
+        text-align: center;
+        padding: 1em 0;
+    }
+    
+    header h1 {
+        margin: 0.2em 0;
+        font-size: 2.5em;
+        animation: fadeInDown 1s ease-in-out;
+    }
+    
+    header p {
+        margin: 0.5em 0;
+        font-size: 1.2em;
+    }
+    
+    .profile {
+        display: flex;
+        align-items: center;
+        padding: 2em;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        animation: fadeIn 1s ease-in-out;
+    }
+    
+    .profile img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-right: 2em;
+    }
+    
+    .bio h2 {
+        margin-top: 0;
+        font-size: 1.8em;
+    }
+    
+    .skills {
+        padding: 2em;
+        background-color: white;
+        margin-top: 1em;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        animation: fadeIn 1.5s ease-in-out;
+    }
+    
+    footer {
+        text-align: center;
+        padding: 1em 0;
+        background-color: #4CAF50;
+        color: white;
+        margin-top: 2em;
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    </style>
+    <header>
+        <h1>Currículum Vitae</h1>
+        <p>Mikel Gómez Herráez</p>
+    </header>
+    <section class="profile">
+        <img src="image_67174145.JPG" alt="Foto de perfil">
+        <div class="bio">
+            <h2>Sobre mí</h2>
+            <p>Soy un estudiante dedicado de Desarrollo de Aplicaciones Web con un profundo interés en crear soluciones innovadoras y eficientes. A lo largo de mi formación, 
+                he adquirido una sólida base en lenguajes de programación como HTML, CSS y JavaScript, así como experiencia práctica en frameworks modernos como React y Angular.
+                Mi objetivo es convertirme en un desarrollador web competente y versátil, capaz de enfrentar desafíos 
+                complejos y contribuir significativamente a proyectos de desarrollo web. He participado en varios 
+                proyectos académicos y personales que me han permitido aplicar mis conocimientos y mejorar mis
+                 habilidades en el diseño y desarrollo de aplicaciones web responsivas y accesibles.
+                Destaco por mi capacidad para aprender rápidamente nuevas tecnologías y por mi enfoque
+                 proactivo hacia la resolución de problemas. Además, tengo habilidades de colaboración 
+                 y comunicación efectiva, esenciales para trabajar en equipos multidisciplinarios y dinámicos.
+                Estoy comprometido con mi crecimiento profesional y constantemente busco oportunidades 
+                para ampliar mis conocimientos y experiencia en el campo del desarrollo web. Aspiro a contribuir a proyectos significativos que impacten positivamente a los usuarios y a la comunidad tecnológica en general.</p>
+        </div>
+    </section>
+    <section class="skills">
+        <h2>Habilidades</h2>
+        <canvas id="skillsChart"></canvas>
+    </section>
+    <footer>
+        <p>Contacto: <a href="mailto:correo@example.com">mikelherraez@example.com</a></p>
+    </footer>
+    <script>document.addEventListener('DOMContentLoaded', function() {
+        const ctx = document.getElementById('skillsChart').getContext('2d');
+        const skillsChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['HTML', 'CSS', 'JavaScript', 'React', 'Node.js', 'Python'],
+                datasets: [{
+                    label: 'Nivel de Habilidad (%)',
+                    data: [90, 85, 80, 75, 70, 95],
+                    backgroundColor: [
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                animation: {
+                    duration: 2000,
+                    easing: 'easeOutBounce'
+                }
+            }
+        });
+    }); </script>
+</body>
+</html>
